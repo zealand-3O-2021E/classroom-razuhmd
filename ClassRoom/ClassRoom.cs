@@ -16,6 +16,17 @@ namespace ClassRoom
         {
         }
 
-
+        public string ClassName
+        {
+            get { return _className; }
+        }
+        public List<Student> StudentList
+        {
+            get { return _studentList; }
+        }
+        public DateTime SemesterStart
+        {
+            get { return _semesterStart; }
+        }
     }
 }
