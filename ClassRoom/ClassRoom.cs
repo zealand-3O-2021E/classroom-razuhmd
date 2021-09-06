@@ -38,5 +38,40 @@ namespace ClassRoom
             get { return _semesterStart; }
             set { _semesterStart = value; }
         }
+
+        public void CountBirthPerSeason()
+        {
+            int winterCount = 0;
+            int springCount = 0;
+            int summerCount = 0;
+            int autumnCount = 0;
+
+            foreach(Student student in StudentList)
+            {
+                if (student.BirthMonth == 12 || student.BirthMonth == 1 || student.BirthMonth == 2)
+                { winterCount++; }
+                else
+                if (student.BirthMonth == 3 || student.BirthMonth == 4 || student.BirthMonth == 5)
+                { springCount++; }
+                else
+                if (student.BirthMonth == 6 || student.BirthMonth == 7 || student.BirthMonth == 8)
+                { summerCount++; }
+                else
+                if (student.BirthMonth == 9 || student.BirthMonth == 10 || student.BirthMonth == 11)
+                { autumnCount++; }               
+            }
+
+            Console.WriteLine($"Number of students born in Winter: {winterCount}");
+            Console.WriteLine($"Number of students born in Spring: {springCount}");
+            Console.WriteLine($"Number of students born in Summer: {summerCount}");
+            Console.WriteLine($"Number of students born in Autumn: {autumnCount}");
+
+        }
+
+        public override string ToString()
+        {
+            return $"\n\t\t\tClass Name: {ClassName}, \n\t\t\t::::::Student List::::: {StudentList}, \n\t\t\tSemester Start: {SemesterStart}";
+        }
+
     }
 }

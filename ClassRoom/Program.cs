@@ -28,6 +28,18 @@ namespace ClassRoom
             cr.StudentList = studentList;
             cr.SemesterStart = new DateTime(2019, 8, 26);
 
+            
+            Console.WriteLine($"\n\t\t\t\tClass Name: {cr.ClassName}");
+            Console.WriteLine($"\n\t\t\t\t::::::List of Students :::::::");
+            foreach (Student student in studentList)
+            { 
+                Console.WriteLine(student);
+                Console.WriteLine($"\t\t\t\t Season of Birth : {student.Season()}");
+            }            
+            Console.WriteLine($"\n\t\t\t\tSemester Start: {cr.SemesterStart}");
+            Console.WriteLine("\n\t\t\t\tPress any key to close the program...");
+
+            Console.ReadKey();
         }
     }
 }
